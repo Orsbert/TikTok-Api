@@ -294,7 +294,7 @@ class TikTokApi:
         query = {"verifyFp": verify_fp, "device_id": device_id, "_signature": signature}
         url = "{}&{}".format(full_url, urlencode(query))
 
-        h = requests.head(
+        h = requests.get(
             url,
             headers={"x-secsdk-csrf-version": "1.2.5", "x-secsdk-csrf-request": "1"},
             proxies=self._format_proxy(processed.proxy),
