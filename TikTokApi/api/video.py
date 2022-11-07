@@ -149,7 +149,7 @@ class Video:
         kwargs["custom_device_id"] = processed.device_id
         cursor = offset
 
-        spawn = requests.head(
+        spawn = requests.get(
             "https://www.tiktok.com",
             proxies=Video.parent._format_proxy(processed.proxy),
             **Video.parent._requests_extra_kwargs,
